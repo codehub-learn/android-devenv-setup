@@ -10,8 +10,9 @@
   - [Java Run Time][javaDev]
 
 Επιπλεον:
-  - Όλο το υλικο τψν διαλεξεων θα ανεβαίνει σε αυτο το repository
-  - Καθώς επίσης και android examples για τα παραδείγματα που θα γινουν κατα την διάρκεια.
+-   Όλο το υλικο των διαλεξεων θα ανεβαίνει σε αυτο το repository
+-   Καθώς επίσης και android source examples για όλα τα παραδείγματα που
+    θα γινουν κατα την διάρκεια.
 
    [androidDev]: <https://developer.android.com/studio>
    [javaDev]: <https://www.java.com/en/download/>
