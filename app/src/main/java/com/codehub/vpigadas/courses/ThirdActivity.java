@@ -38,7 +38,6 @@ public class ThirdActivity extends AppCompatActivity {
 
         ImageView img = findViewById(R.id.thirdImg);
         Glide.with(this).load(url).into(img);
-
     }
 
     @Override
@@ -49,7 +48,6 @@ public class ThirdActivity extends AppCompatActivity {
         String url = "https://navneet7k.github.io/cars_list.json";
         String url1 = "https://navneet7k.github.io/vans_list.json";
         String url2 = "https://navneet7k.github.io/bike_list.json";
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -66,35 +64,35 @@ public class ThirdActivity extends AppCompatActivity {
             }
         });
 
-        stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        JsonModel model = new Gson().fromJson(response,JsonModel.class);
-                        Log.i("RESPONSE", model.toString());
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-
-        stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        JsonModel model = new Gson().fromJson(response,JsonModel.class);
-                        Log.i("RESPONSE", model.toString());
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
+//        stringRequest = new StringRequest(Request.Method.GET, url,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//
+//                        JsonModel model = new Gson().fromJson(response,JsonModel.class);
+//                        Log.i("RESPONSE", model.toString());
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
+//
+//        stringRequest = new StringRequest(Request.Method.GET, url,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//
+//                        JsonModel model = new Gson().fromJson(response,JsonModel.class);
+//                        Log.i("RESPONSE", model.toString());
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
 
         queue.add(stringRequest);
     }

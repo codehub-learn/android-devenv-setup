@@ -1,16 +1,17 @@
 package com.codehub.vpigadas.courses;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.codehub.vpigadas.courses.models.Monkey;
+import com.codehub.vpigadas.courses.models.Monkey2;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -25,6 +26,13 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+
+        String name = getIntent().getStringExtra("name");
+        String name1 = getIntent().getStringExtra("name1");
+
+        Monkey monkey = (Monkey) getIntent().getSerializableExtra("monkey");
+
+        Monkey2 monkey2 = getIntent().getParcelableExtra("monkey");
 
         TextView textView = findViewById(R.id.mainTxt);
         textView.setText("Vassilis");
