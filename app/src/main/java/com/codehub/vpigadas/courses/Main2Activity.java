@@ -30,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         String name1 = getIntent().getStringExtra("name1");
 
-        Monkey monkey = (Monkey) getIntent().getSerializableExtra("monkey");
+//        Monkey monkey = (Monkey) getIntent().getSerializableExtra("monkey");
 
         Monkey2 monkey2 = getIntent().getParcelableExtra("monkey");
 
@@ -53,15 +53,17 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 gotoNextScreen();
+                onBackPressed();
             }
         });
 
         btn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                //gotoSecondScreen();
-//                showMessage();
-                return false;
+                getIntent().putExtra("status","Go Back");
+                setResult(RESULT_OK,getIntent());
+                finish();
+                return true;
             }
         });
     }

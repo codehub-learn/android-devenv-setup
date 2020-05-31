@@ -1,6 +1,5 @@
 package com.codehub.vpigadas.courses;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +13,18 @@ import androidx.fragment.app.Fragment;
 
 public class BlankFragment extends Fragment {
 
+
+    public static BlankFragment getInstance(String name, int number) {
+        BlankFragment fragment = new BlankFragment();
+        Bundle parameter = new Bundle();
+        parameter.putString("name", name);
+        parameter.putInt("number", number);
+
+        fragment.setArguments(parameter);
+        return fragment;
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,6 +36,12 @@ public class BlankFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ImageView img = view.findViewById(R.id.fragmentImg1);
+
+        if (getArguments() != null) {
+            String name = getArguments().getString("name");
+        }else {
+            //Handle special event (wrong arguments)
+        }
     }
 
     @Override

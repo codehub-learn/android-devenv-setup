@@ -11,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ThirdActivity"></activity>
+        <activity android:name=".AddFragmentActivity"></activity>
+        <activity android:name=".HandleFragmentsActivity" />
+        <activity android:name=".ThirdActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".AddFragmentActivity"
+            android:name=".FragmentCommActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

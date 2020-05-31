@@ -64,6 +64,12 @@ public class AddFragmentActivity extends AppCompatActivity {
                 animals.setAnimals(array);
                 List<Monkey2> array2 = new ArrayList<>();
                 for (int i = 0; i < 10; i++) {
+
+                    if(i == 9 ){
+                        int number = 0;
+                        number++;
+                    }
+
                     Monkey2 one = new Monkey2();
                     one.setName("Tesla");
                     one.setLegs(4);
@@ -73,23 +79,40 @@ public class AddFragmentActivity extends AppCompatActivity {
                 animals.setAnimals2(array2);
 
 
-
-
-
-
-
-
-
                 Monkey2 monkey = animals.getAnimals2().get(0);
                 Intent intent = new Intent(AddFragmentActivity.this, Main2Activity.class);
-                intent.putExtra("name", "Nikoleta");
-                intent.putExtra("name1", "Manos");
-                intent.putExtra("monkey",monkey);
+
+//                intent.putExtra("name", "Nikoleta");
+//                intent.putExtra("name1", "Manos");
+//                intent.putExtra("monkey",monkey);
+
+                Bundle parameter= new Bundle();
+                parameter.putString("name","Nikoleta");
+                parameter.putString("name1","Manos");
+                parameter.putParcelable("monkey",monkey);
+
+                intent.putExtras(parameter);
 
 
-                startActivity(intent);
+                startActivityForResult(intent,1000);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1000){
+            if(resultCode == RESULT_OK){
+                if(data != null){
+                    String name = data.getStringExtra("name");
+                    String status = data.getStringExtra("status");
+                }
+            }else if(resultCode == RESULT_CANCELED){
+
+            }
+        }
     }
 
     public void onActionStart() {
