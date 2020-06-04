@@ -62,8 +62,6 @@ public class ThirdFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentCommActivity activity = (FragmentCommActivity) getActivity();
-        if(activity != null){
-            activity.setSomething("Ui Ready");
-        }
+
     }
 }

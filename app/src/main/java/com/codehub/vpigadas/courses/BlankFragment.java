@@ -1,6 +1,8 @@
 package com.codehub.vpigadas.courses;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +11,16 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.codehub.vpigadas.courses.viewmodels.FragmentCommViewModel;
 
 
 public class BlankFragment extends Fragment {
 
+    private FragmentCommViewModel viewmodel;
 
     public static BlankFragment getInstance(String name, int number) {
         BlankFragment fragment = new BlankFragment();
@@ -24,6 +32,18 @@ public class BlankFragment extends Fragment {
         return fragment;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        FragmentActivity activity = getActivity();
+        if(activity == null){
+            viewmodel = new ViewModelProvider(this).get(FragmentCommViewModel.class);
+        }else {
+            viewmodel = new ViewModelProvider(activity).get(FragmentCommViewModel.class);
+        }
+
+    }
 
     @Nullable
     @Override
@@ -35,13 +55,12 @@ public class BlankFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageView img = view.findViewById(R.id.fragmentImg1);
-
-        if (getArguments() != null) {
-            String name = getArguments().getString("name");
-        }else {
-            //Handle special event (wrong arguments)
-        }
+        viewmodel.getStream().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Log.i("Response", s);
+            }
+        });
     }
 
     @Override
