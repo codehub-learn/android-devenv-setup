@@ -1,12 +1,25 @@
 package gr.ote.android.codehub_academy
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.content.Intent
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AbstractActivity(R.layout.activity_main) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun initLayout() {
+        brn_one.setOnClickListener {
+            finish()
+        }
+
+        brn_two.setOnClickListener {
+            val intent = Intent(this@MainActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+    override fun startOperations() {
+    }
+
+    override fun stopOperations() {
+    }
+
 }
