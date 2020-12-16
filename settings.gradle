@@ -1,2 +1,3 @@
 rootProject.name='CodeHub Tech Academy'
 include ':app'
+include ':networking'

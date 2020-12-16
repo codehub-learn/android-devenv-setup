@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CodeHub Tech Academy</string>
+    <string name="title_home">Σπίτι</string>
+    <string name="title_dashboard">Κεντρικη</string>
+    <string name="title_notifications">Ανακοινώσεις</string>
+</resources>

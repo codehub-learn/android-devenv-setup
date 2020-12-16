@@ -2,13 +2,16 @@ package gr.ote.android.codehub_academy
 
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 abstract class AbstractActivity(layoutRes: Int) : AppCompatActivity(layoutRes) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("Abstract","onCreate")
+        this.resources.configuration.setLocale(Locale("el","GR"))
     }
 
     override fun onStart() {
@@ -17,6 +20,7 @@ abstract class AbstractActivity(layoutRes: Int) : AppCompatActivity(layoutRes) {
 
     }
 
+    @Keep
     abstract fun initLayout()
 
     override fun onPostCreate(savedInstanceState: Bundle?) {

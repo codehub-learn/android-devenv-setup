@@ -1,12 +1,18 @@
 package gr.ote.android.codehub_academy
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import gr.ote.android.codehub_academy.database.DatabaseAndroidViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AbstractActivity(R.layout.activity_main) {
     private lateinit var viewModel: DatabaseAndroidViewModel
@@ -40,12 +46,12 @@ class MainActivity : AbstractActivity(R.layout.activity_main) {
 
     override fun startOperations() {
 
-//        val sharedPref = getSharedPreferences("MainActivity", Context.MODE_PRIVATE)
-//        sharedPref.getString("variable", "empty")
-//
-//        val editor: SharedPreferences.Editor = sharedPref.edit()
-//        editor.putString("variable", "value")
-//        editor.apply()
+        val sharedPref = getSharedPreferences("MainActivity", Context.MODE_PRIVATE)
+        sharedPref.getString("variable", "empty")
+
+        val editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putString("variable", "value")
+        editor.apply()
 
         viewModel.observe(this, Observer {
             it

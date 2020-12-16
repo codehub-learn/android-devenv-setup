@@ -7,7 +7,7 @@ import gr.ote.android.codehub_academy.recyclerView.models.RecycleDataModel
 import gr.ote.android.codehub_academy.recyclerView.models.RecycleItems
 import kotlinx.android.synthetic.main.holder_user_data.view.*
 
-class RecyclerViewHolder(itemView: View, private val listener: ConsumeClickEvents) :
+open class RecyclerViewHolder(itemView: View, private val listener: ConsumeClickEvents) :
     RecyclerView.ViewHolder(itemView) {
 
     fun bind(data: RecycleItems) {

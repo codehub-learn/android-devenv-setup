@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">CodeHub Tech Academy</string>
-    <string name="name">Vassilis Pigadas</string>
-    <string name="hint_username">Please enter your email</string>
-    <string name="hint_password">Please enter your pass</string>
+    <string name="name" translatable="false">Vassilis Pigadas</string>
+    <string name="hint_username" translatable="false">Please enter your email</string>
+    <string name="hint_password" translatable="false">Please enter your pass</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_bottom_navigation" translatable="false">BottomNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

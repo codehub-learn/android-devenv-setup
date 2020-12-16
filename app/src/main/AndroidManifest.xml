@@ -14,15 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".network.NetworkActivity"
+            android:label="@string/title_activity_bottom_navigation"></activity>
+        <activity
             android:name=".LoginActivityActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".NetworkActivity" />
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Main2Activity" />
         <activity android:name=".ListActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Main2Activity">
+        <activity android:name="BottomNavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
